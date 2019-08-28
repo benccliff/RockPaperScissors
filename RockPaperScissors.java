@@ -3,7 +3,14 @@ import java.util.Scanner;
 
 public class RockPaperScissors {
 
+    // A short program to play a game of rock, paper, scissors using user input.
+
     static int getUserInput() {
+
+        /*
+        Prompts the user to enter their move, reads this from the command line, and converts their move to an
+        integer between 0 and 2 inclusive (or 3 if they provide an invalid move). Returns said integer.
+         */
 
         Scanner input = new Scanner(System.in);
         String userInput;
@@ -28,6 +35,11 @@ public class RockPaperScissors {
 
     static int generateOpponentAction() {
 
+        /*
+        Randomly generates a move for the opponent, informs the user of the move, and then returns an integer between
+        0 and 2 inclusive corresponding to this move.
+         */
+
         Random randomGenerator = new Random();
         int opponentAction;
 
@@ -47,6 +59,10 @@ public class RockPaperScissors {
 
     static String decideWinner(int player, int opponent) {
 
+        /*
+        Takes as arguments the moves of the player and the opponent, and returns the winner of the game as a string.
+         */
+
         String result;
 
         if ((player == 0 && opponent == 1) || (player == 1 && opponent == 2) || (player == 2 && opponent == 0)) {
@@ -65,6 +81,10 @@ public class RockPaperScissors {
 
     static void informUser(String result) {
 
+        /*
+        Informs the user of the result of the game.
+         */
+
         if (result.equals("opponent")) {
             System.out.println("Bad luck - you lost!");
         } else if (result.equals("player")) {
@@ -78,6 +98,10 @@ public class RockPaperScissors {
     }
 
     public static void main(String[] args) {
+
+        /*
+        Orchestrates the high level logic of the program.
+         */
 
         int userAction;
         int opponentAction;
